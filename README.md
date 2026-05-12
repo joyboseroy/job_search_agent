@@ -146,7 +146,7 @@ Full Python agents with a Streamlit UI. Works without any agentic IDE.
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/job_search_agent
+git clone https://github.com/joyboseroy/job_search_agent
 cd job_search_agent
 pip install -r requirements.txt
 export ANTHROPIC_API_KEY="sk-ant-your-key-here"

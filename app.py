@@ -88,8 +88,8 @@ with tabs[0]:
 
     with col1:
         st.markdown("#### Inputs")
-        company = st.text_input("Company", placeholder="e.g. Dell Technologies")
-        role = st.text_input("Role", placeholder="e.g. Advisory Consultant, Data Scientist")
+        company = st.text_input("Company", placeholder="e.g. Acme Corp")
+        role = st.text_input("Role", placeholder="e.g. Senior AI Engineer")
         jd = st.text_area(
             "Job Description (paste key parts)",
             height=200,
@@ -340,7 +340,7 @@ with tabs[3]:
             format_func=lambda x: FOLLOW_UP_TYPES[x]["description"]
         )
         fu_company = st.text_input("Company", key="fu_company")
-        fu_contact = st.text_input("Contact name & title", key="fu_contact", placeholder="e.g. Himani Sharma, TA")
+        fu_contact = st.text_input("Contact name & title", key="fu_contact", placeholder="e.g. Alex Johnson, TA")
         fu_role = st.text_input("Role applied for", key="fu_role")
         fu_days = st.number_input("Days since last contact", min_value=0, value=7, key="fu_days")
         fu_notes = st.text_area("Notes / context", height=120, key="fu_notes",

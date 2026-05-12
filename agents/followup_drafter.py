@@ -22,16 +22,19 @@ import anthropic
 from typing import Optional
 from dataclasses import dataclass
 
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+from profile_loader import parse_profile_md, build_profile_context
+
 try:
     import config
-    PROFILE = config.PROFILE
     LLM_MODEL = config.LLM_MODEL
     LLM_MAX_TOKENS = config.LLM_MAX_TOKENS
 except ImportError:
-    import config_template as config
-    PROFILE = config.PROFILE
-    LLM_MODEL = config.LLM_MODEL
-    LLM_MAX_TOKENS = config.LLM_MAX_TOKENS
+    LLM_MODEL = "claude-sonnet-4-20250514"
+    LLM_MAX_TOKENS = 1000
+
+PROFILE = parse_profile_md()
 
 
 FOLLOW_UP_TYPES = {
